@@ -1,13 +1,15 @@
-package com.dazao.cloudstudy;
+package com.dazao;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+/**
+ * Hello world!
+ */
+
 @SpringBootApplication
-public class CloudStudyApplication {
-
+public class App {
     public static void main(String[] args) {
-        SpringApplication.run(CloudStudyApplication.class, args);
+        SpringApplication.run(App.class,args);
     }
-
 }

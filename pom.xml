@@ -11,8 +11,14 @@
     <groupId>com.example</groupId>
     <artifactId>cloudStudy</artifactId>
     <version>0.0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
     <name>cloudStudy</name>
     <description>cloudStudy</description>
+    <modules>
+        <module>userService</module>
+        <module>bookService</module>
+        <module>borrowService</module>
+    </modules>
     <properties>
         <java.version>17</java.version>
     </properties>
