@@ -1,4 +1,4 @@
-package com.dazao.entity;
+package com.dazao;
 
 import lombok.Data;
 

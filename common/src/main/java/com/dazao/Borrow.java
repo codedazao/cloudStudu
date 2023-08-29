@@ -1,4 +1,4 @@
-package com.borrow.entity;
+package com.dazao;
 
 import lombok.Data;
 

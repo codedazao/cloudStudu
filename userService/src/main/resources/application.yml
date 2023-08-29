@@ -4,5 +4,5 @@ spring:
   datasource:
     username: dazao
     password: Asd2003828
-    url: jdbc:mysql://rm-2ze936157744v8bl59o.mysql.rds.aliyuncs.com:3306
+    url: jdbc:mysql://rm-2ze936157744v8bl59o.mysql.rds.aliyuncs.com:3306/cloudstudy
     driver-class-name: com.mysql.cj.jdbc.Driver
