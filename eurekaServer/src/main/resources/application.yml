@@ -3,6 +3,7 @@ spring:
     name: registerEureka
 eureka:
   client:
+    register-with-eureka: false
     fetch-registry: false
     service-url:
       defaultZone: http://localhost:${server.port}/eureka

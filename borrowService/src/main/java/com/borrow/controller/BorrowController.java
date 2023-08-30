@@ -1,6 +1,8 @@
 package com.borrow.controller;
 
 
+import client.invoke.BookServiceInvokeRemote;
+import client.invoke.UserServiceInvokeRemote;
 import com.borrow.service.BorrowService;
 import com.dazao.Book;
 import com.dazao.Borrow;
@@ -21,24 +23,27 @@ public class BorrowController {
 
     @Resource
     BorrowService borrowService;
+
+    @Resource
+    UserServiceInvokeRemote userServiceInvokeRemote;
+    @Resource
+    BookServiceInvokeRemote bookServiceInvokeRemote;
     /**
      * 根据用户信息查询借阅信息
      * @return
      */
     @GetMapping("/borrow/{uid}")
     public BorrowUserBookDto getBorrowInfoByUserId(@PathVariable("uid") Integer uid){
-        RestTemplate restTemplate = new RestTemplate();
+        System.out.println("方法调用");
         ArrayList<Book> books = new ArrayList<>();
-        User userResponseEntity = restTemplate.
-                getForEntity(OtherServiceUrl.UserService +"/user/"+ uid, User.class).getBody();
+        User userResponseEntity = userServiceInvokeRemote.getUserById(uid);
         if (userResponseEntity != null) {
             List<Borrow> borrowByUserId =
                     borrowService.getBorrowByUserId(userResponseEntity.getUid());
             for (Borrow borrow : borrowByUserId) {
                 //获得bid
                 Integer bid = borrow.getBid();
-                Book bookResponseEntity = restTemplate.
-                        getForEntity(OtherServiceUrl.BookService+"/book/"+bid, Book.class).getBody();
+                Book bookResponseEntity = bookServiceInvokeRemote.getBookById(bid);
                 books.add(bookResponseEntity);
             }
             return new BorrowUserBookDto().setBooks(books).setUser(userResponseEntity);

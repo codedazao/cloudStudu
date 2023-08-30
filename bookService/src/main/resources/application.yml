@@ -1,8 +1,15 @@
 server:
   port: 8081
 spring:
+  application:
+    name: bookService
   datasource:
     username: dazao
     password: Asd2003828
     url: jdbc:mysql://rm-2ze936157744v8bl59o.mysql.rds.aliyuncs.com:3306/cloudstudy
     driver-class-name: com.mysql.cj.jdbc.Driver
+eureka:
+  port: 8848
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:${eureka.port}/eureka

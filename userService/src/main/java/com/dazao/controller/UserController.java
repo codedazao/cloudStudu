@@ -20,6 +20,7 @@ public class UserController {
      */
     @GetMapping("/user/{userId}")
     public User getUserById(@PathVariable Integer userId){
+        System.out.println("我被调用了");
        return userService.getUserById(userId);
     }
 }

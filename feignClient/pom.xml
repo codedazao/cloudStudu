@@ -9,10 +9,7 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-    <artifactId>eurekaServer</artifactId>
-
-    <repositories>
-    </repositories>
+    <artifactId>feignClient</artifactId>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
@@ -21,9 +18,16 @@
     </properties>
 
     <dependencies>
+        <!-- 远程调用-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.dazao</groupId>
+            <artifactId>common</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
         </dependency>
     </dependencies>
 </project>
