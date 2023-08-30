@@ -1,19 +1,16 @@
 package com.borrow.controller;
 
-
-import client.invoke.BookServiceInvokeRemote;
-import client.invoke.UserServiceInvokeRemote;
+import com.borrow.invoke.BookServiceInvokeRemote;
+import com.borrow.invoke.UserServiceInvokeRemote;
 import com.borrow.service.BorrowService;
 import com.dazao.Book;
 import com.dazao.Borrow;
 import com.dazao.User;
 import dto.BorrowUserBookDto;
-import finalconst.OtherServiceUrl;
 import jakarta.annotation.Resource;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.client.RestTemplate;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,7 +20,6 @@ public class BorrowController {
 
     @Resource
     BorrowService borrowService;
-
     @Resource
     UserServiceInvokeRemote userServiceInvokeRemote;
     @Resource
@@ -49,5 +45,10 @@ public class BorrowController {
             return new BorrowUserBookDto().setBooks(books).setUser(userResponseEntity);
         }
         return null;
+    }
+
+    @GetMapping("/hello")
+    public String hello(){
+        return "hello";
     }
 }
