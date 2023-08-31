@@ -21,6 +21,7 @@
         <module>common</module>
         <module>eurekaServer</module>
         <module>feignClient</module>
+        <module>gatewayStudy</module>
 
     </modules>
     <properties>

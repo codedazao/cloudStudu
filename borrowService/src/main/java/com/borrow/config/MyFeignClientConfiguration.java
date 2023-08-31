@@ -7,7 +7,6 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-@EnableFeignClients
 public class MyFeignClientConfiguration {
     @Bean
     public Retryer feginRetryer(){

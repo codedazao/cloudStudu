@@ -4,10 +4,9 @@ package com.borrow.invoke;
 import com.dazao.Book;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.cloud.openfeign.FeignClient;
-import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-@Component
+
 @FeignClient(name = "bookService")
 public interface BookServiceInvokeRemote {
     @LoadBalanced
